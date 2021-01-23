@@ -1,32 +1,49 @@
 package app.isfaaghyth.contact
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
+import app.isfaaghyth.contact.adapter.PersonAdapter
+import app.isfaaghyth.contact.model.Person
 
 class MainActivity : AppCompatActivity() {
 
-    private var txtName: TextView? = null
-    private var btnDetail: Button? = null
+    private var rvPerson: RecyclerView? = null
+    private var personAdapter: PersonAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        rvPerson = findViewById(R.id.rv_person)
 
-        txtName = findViewById(R.id.txt_name)
-        btnDetail = findViewById(R.id.btn_detail)
-
-        btnDetail?.setOnClickListener {
-            val detailIntent = Intent(this, DetailActivity::class.java)
-            startActivity(detailIntent)
-        }
+        personAdapter = PersonAdapter(dataSetPerson())
+        rvPerson?.adapter = personAdapter
     }
 
-    override fun onPause() {
-        super.onPause()
-        txtName?.text = "wah, aplikasinya di minimize"
+    private fun dataSetPerson(): List<Person> {
+        return listOf(
+            Person(
+                R.mipmap.ic_launcher,
+                "Muh Isfhani",
+                "Family",
+                "isfa@gmail.com",
+                "123"
+            ),
+            Person(
+                R.mipmap.ic_launcher,
+                "Budi",
+                "Co-workers",
+                "budi@company.com",
+                "456"
+            ),
+            Person(
+                R.mipmap.ic_launcher,
+                "Rani",
+                "Family",
+                "rani@gmail.com",
+                "789"
+            )
+        )
     }
 
 }
