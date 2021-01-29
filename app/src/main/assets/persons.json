@@ -1,0 +1,47 @@
+{
+  "success": true,
+  "data": [
+    {
+      "fullname": "John Wick",
+      "avatar": "https://avatarfiles.alphacoders.com/510/51068.jpg",
+      "relation": "Family",
+      "email": "john.wick@gmail.com",
+      "phone_number": "085211223344"
+    },
+    {
+      "fullname": "Robert Downey Jr.",
+      "avatar": "https://avatarfiles.alphacoders.com/111/thumb-1920-111377.jpg",
+      "relation": "Co-workers",
+      "email": "i.am.rich@gmail.com",
+      "phone_number": "085211005600"
+    },
+    {
+      "fullname": "Alvaro Morte",
+      "avatar": "https://i0.wp.com/theverybesttop10.com/wp-content/uploads/2020/11/10-Interesting-Facts-About-Alvaro-Morte-El-Professor-8.jpg",
+      "relation": "Friend",
+      "email": "profesor@gmail.com",
+      "phone_number": "081234567789"
+    },
+    {
+      "fullname": "Kento Yamazaki",
+      "avatar": "https://pbs.twimg.com/profile_images/613983919164141568/OP5QWMme_400x400.png",
+      "relation": "Family",
+      "email": "alice.borderland@gmail.com",
+      "phone_number": null
+    },
+    {
+      "fullname": "Kim Seon-ho",
+      "avatar": "https://biographymask.com/wp-content/uploads/2020/11/Kim-Seon-ho-South-Korean-actor.jpg",
+      "relation": "Co-worker",
+      "email": null,
+      "phone_number": "0832876192"
+    },
+    {
+      "fullname": "Louis Hofmann",
+      "avatar": "https://i.pinimg.com/originals/9f/df/87/9fdf8773bddd4f12ffafcc0eb51174f6.jpg",
+      "relation": "Friend",
+      "email": null,
+      "phone_number": null
+    }
+  ]
+}
