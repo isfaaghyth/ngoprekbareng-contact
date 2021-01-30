@@ -1,10 +1,13 @@
 package app.isfaaghyth.contact
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import app.isfaaghyth.contact.adapter.PersonAdapter
 import app.isfaaghyth.contact.model.Person
+import app.isfaaghyth.contact.model.PersonData
+import com.google.gson.Gson
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,34 +19,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         rvPerson = findViewById(R.id.rv_person)
 
-        personAdapter = PersonAdapter(dataSetPerson())
-        rvPerson?.adapter = personAdapter
-    }
-
-    private fun dataSetPerson(): List<Person> {
-        return listOf(
-            Person(
-                R.mipmap.ic_launcher,
-                "Muh Isfhani",
-                "Family",
-                "isfa@gmail.com",
-                "123"
-            ),
-            Person(
-                R.mipmap.ic_launcher,
-                "Budi",
-                "Co-workers",
-                "budi@company.com",
-                "456"
-            ),
-            Person(
-                R.mipmap.ic_launcher,
-                "Rani",
-                "Family",
-                "rani@gmail.com",
-                "789"
-            )
-        )
+        assets.open("persons.json")
+            .bufferedReader()
+            .use {
+                val persons = Gson().fromJson(it.readText(), PersonData::class.java)
+                if (persons.success) {
+                    personAdapter = PersonAdapter(persons.dataPerson)
+                    rvPerson?.adapter = personAdapter
+                }
+            }
     }
 
 }
